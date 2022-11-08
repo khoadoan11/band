@@ -1,0 +1,50 @@
+<h1>  dòng tiêu đề  </h1>
+
+<p>  dòng chứa nội dung văn bản </p>
+
+<img src="http://linkanh" alt="kết quả hiển thị khi ảnh bị lỗi">
+
+<a href="http://link">văn bản hiển thị ngoài</a>
+
+ <ul> //<ol></ol>: tự động đánh số thứ tự
+        <li>dòng 1</li>
+        <li>dòng 2</li>
+        <li>dòng 3</li>		dạng danh sách
+        <li>dòng 4</li>
+    </ul>
+
+ <table>
+        <thead>
+            <th>ten</th>
+            <th>tuoi</th>
+            <th>dia chi</th>
+        </thead>
+        <tbody>
+            <tr>					
+                <td>khoa</td>			
+                <td>19</td>				ten	tuoi	dia chi
+                <td>da nang</td>			khoa	19	da nang
+            </tr>					hieu	20	quang nam
+            <tr>
+                <td>hieu</td>
+                <td>20</td>
+                <td>quang nam</td>
+            </tr>
+        </tbody>
+    </table>
+
+<input type="text">: lấy thông tin dạng văn bản
+type="checkbox": lấy dạng dấu tít
+type="radio": lấy dạng dấu tít
+
+<input name="adas" type="radio">
+<input name="adas" type="radio">	chọn 1 trong 3
+<input name="adas" type="radio">
+
+<button>sinh ra 1 nút</button>
+
+<div>
+	// tạo túi bọc
+ </div>
+
+thuộc tính: <h1>  title= "đây là tiêu đề > dòng tiêu đề  </h1>

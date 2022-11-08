@@ -1,0 +1,226 @@
+có 3 cách sử dụng css:
+- internal
+- external
+- inline
+
+cách internal: viết trực tiếp vào html
+vd: 
+<style>
+        table {
+            color: brown;
+            font-size: 30;
+        }
+    </style>
+
+cách external: thông qua file .css để sử dụng
+vd: table {
+    color: brown;
+    font-size: 30;
+}
+lưu ý: phải thêm link ở đối tượng html khi sử dụng css
+vd: 
+<table>
+        <link rel="stylesheet" href="style.css">
+    </table> 
+
+cách inline: sử dụng dựa vào thuộc tính của thẻ trên html
+vd:
+  <table style="color:brown; font-size: 20;">
+	..................
+    </table> 
+
+
+CSS selectors: sử dụng css trên các phần tử đc chỉ định trên file html
+
+sử dụng bằng id="..."; thêm # trc hàm css
+sử dụng bằng class="..."; thêm . trc hàm css\
+
+/* Lựa chọn toàn bộ các thẻ */
+* {
+    /* `font-style: italic` là chữ nghiêng */
+    font-style: italic;
+}
+
+/* Lựa chọn toàn bộ các thẻ p */
+p {
+    /* `text-decoration: underline` là chữ gạch chân */
+    text-decoration: underline;
+}
+
+/* Lựa chọn toàn bộ các thẻ có class-1 */
+.class-1 {
+    color: red;
+}
+
+/* Lựa chọn toàn bộ thẻ đồng thời có cả class-2 và class-3 */
+.class-2.class-3 {
+    color: green;
+}
+
+/* Lựa chọn thẻ có class-5 là con của thẻ class-4 */
+.class-4 .class-5 {
+    color: violet;
+}
+
+/* Lựa chọn toàn bộ các thẻ p có class-6 */
+p.class-6 {
+    color: blue;
+}
+
+/* Lựa chọn toàn bộ các thẻ h3, h4 */
+h3, h4 {
+    color: brown;
+}
+
+/* Lựa chọn toàn bộ thẻ li là con của class list */
+.list li {
+    color: deepskyblue;
+}
+
+/* Lựa chọn toàn bộ thẻ li là con trực tiếp của thẻ có class list */
+.list > li {
+    color: fuchsia;
+}
+
+/* Lựa chọn 1 thẻ p đứng liền kề sau class-9 */
+.class-9 + p {
+    color: goldenrod;
+}
+
+/* Lựa chọn toàn bộ thẻ p đứng sau class-10 */
+.class-10 ~ p {
+    color: limegreen;
+}
+
+
+
+/**
+* Các bạn chưa cần học phần dưới này, đây là
+* CSS selectors nâng cao, mình sử dụng để
+* hiển thị tên class bên cạnh mỗi đoạn văn
+* trên giao diện.
+*/
+[class]::after {
+    /* Bạn có thể comment dòng dưới đây để biết tác dụng của nó */
+    content: " ("  attr(class) ")";
+}
+
+
+ĐỘ ƯU TIÊN:
+internal, external: xem xem nhau
+inline - 1000
+#id: 100
+.class: 10
+tag:1
+
+
+BIẾN TRONG CSS
+
+cú pháp biến toàn cục
+:root{
+ --tên biến: thuộc tính;
+}
+cách sử dụng 
+h1{
+  color: var(--tên biến);
+}
+
+cú pháp biến cục bộ
+h1{
+  --tên biến: thuộc tính;
+  color: var(--tên biến);
+}
+
+
+LỚP GIẢ:
+:hover  sử dụng để kích hoạt thuộc tính kinh lê chuột vào
+:active sử dụng để kích hoạt thuộc tính khi click chuột vào
+:first-child sử dụng để gọi lớp con đầu tiên
+:last-child sử dụng để gọi lớp con cuối cùng
+
+PHẦN TỬ GIẢ:
+::before phần tử đầu của tất cả các thẻ trong lớp cha
+::after phần tử cuối cuẩ tất cả các thẻ trong lơps cha
+::first-letter: ký tự đầu tiên
+::first-line: dòng đầu tiên
+::selection: thuộc tính bôi đen
+
+padding: 10px;
+padding: 10px 12px;
+padding: 10px 13px 15px 20 px;
+
+border: 2px solid #333;
+/* Bo tròn góc 16px */
+    border-radius: 16px;
+
+
+background-image: url(link ảnh);
+background-size: xx%;
+background-repeat: no-repeat;  //không lặp lại
+background-image: linear_gradient(độ, màu nền, màu nền);
+background-size: contain;
+background-size: cover;
+background-origin:  ;
+background-position: <hướng> giá trị <hướng> giá trị;
+dùng kết hợp:
+background: url() repeat / center / contain;
+
+POSITION
+
+position: relative;
+top: xxx;
+right: xxx;
+bottom: xxx;
+left:xxx;
+
+position: absolute;
+top: xxx;
+right: xxx;			phụ thuộc vào lớp cha gần nhất có thuộc tính position;
+bottom: xxx;			giữ nguyên vị trí phụ thuộc vào lớp cha
+left:xxx;
+
+position: fixed;
+top: xxx;
+right: xxx;            giữ nguyên vị trí khi cuộn ( dính)
+bottom: xxx;
+left:xxx;
+
+position: sticky;     *ko nên dùng vì ít đc hỗ trợ bởi các trang wed
+position: -webkit-sticky;
+top: 0;
+
+
+text-align: center; 	căn giữa theo bề dài
+line-height: xxxpx; 	căn theo chiều rộng
+
+HIỂN THỊ ẢNH DỰ PHÒNG
+<img onerror="this.src='link ảnh dự phòng'" src="link ảnh"/>
+
+những thành phần thường gặp trên giao diện website
+1. header
+2. navigation ( điều hướng )
+3. breadcrumb ( đường dẫn )
+4. sidebar ( thanh dọc )
+5. slider
+6. content
+7. footer
+
+z-index:1; nổi hoặc chìm layer
+
+letter-spacing: xxpx;  khoảng cách giữ các chữ
+font-style: italic;   chữ nghiêng
+opacity: 0.6;  làm mờ chữ ( 0-1 )
+line-height: 1.4  căn chiều cao của dòng ( 1-2 )
+overflow: hidden; giải quyết vấn đề thẻ con dùng float và bị văng ra khỏi thẻ cha
+
+FLEX BOX
+justify-content: space-between; đẩy xa 1 cái ở đầu 1 cái ở cuối
+justify-content: space-evenly; tạo khoảng cách đều nhau giữa các item 
+justify-content: space-around; tạo khoảng cách đều nhau giữa các item ( dầu và cuối nhr hơn)
+flex: 1; chiếm hết các khoảng trống còn lại
+flex-basis: 30%; mỗi item chiếm 30% thẻ chứa nó
+flex-wrap: wrap; nhảy xuống dưới khi co lại
+flex-wrap: wrap-reverse; nhảy lên trên
+align-items: flex-end; chuyển cột dọc xuống dưới ( dùng cho thẻ cha)
+align-self: flex-end; chuyển cột dọc xuống dưới ( dùng cho thẻ con)
+flex-direction: column; đổi chiều ngang thành chiều dọc
